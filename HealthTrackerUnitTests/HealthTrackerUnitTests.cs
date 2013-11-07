@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HealthTracker.DataAccess.DbFirst;
@@ -156,8 +157,9 @@ namespace HealthTracker.UnitTests
         {
             using (var dbContext = new HealthTrackerEntities())
             {
-                var activityCount = dbContext.CountActivities(1).First();
-                if (activityCount != null) activityCount = activityCount.Value;
+                const string sqlQuery = "SELECT [dbo].[CountMeals] ({0})";
+                Object[] parameters = { 1 };
+                var activityCount = dbContext.Database.SqlQuery<int>(sqlQuery, parameters).FirstOrDefault();
                 Assert.AreEqual(7, activityCount);
             }
         }

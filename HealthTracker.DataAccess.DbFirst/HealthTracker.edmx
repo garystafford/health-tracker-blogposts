@@ -4,199 +4,187 @@
     <edmx:Runtime>
         <!-- SSDL content -->
         <edmx:StorageModels>
-            <Schema Namespace="HealthTrackerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-                <EntityContainer Name="HealthTrackerModelStoreContainer">
-                    <EntitySet Name="Activities" EntityType="HealthTrackerModel.Store.Activities" store:Type="Tables" Schema="dbo" />
-                    <EntitySet Name="ActivityTypes" EntityType="HealthTrackerModel.Store.ActivityTypes" store:Type="Tables" Schema="dbo" />
-                    <EntitySet Name="Hydrations" EntityType="HealthTrackerModel.Store.Hydrations" store:Type="Tables" Schema="dbo" />
-                    <EntitySet Name="Meals" EntityType="HealthTrackerModel.Store.Meals" store:Type="Tables" Schema="dbo" />
-                    <EntitySet Name="MealTypes" EntityType="HealthTrackerModel.Store.MealTypes" store:Type="Tables" Schema="dbo" />
-                    <EntitySet Name="People" EntityType="HealthTrackerModel.Store.People" store:Type="Tables" Schema="dbo" />
-                    <EntitySet Name="PersonSummaryViews" EntityType="HealthTrackerModel.Store.PersonSummaryViews" store:Type="Views" store:Schema="dbo" store:Name="PersonSummaryViews">
-                        <DefiningQuery>
-                            SELECT
-                            [PersonSummaryViews].[PersonId] AS [PersonId],
-                            [PersonSummaryViews].[Name] AS [Name],
-                            [PersonSummaryViews].[ActivitiesCount] AS [ActivitiesCount],
-                            [PersonSummaryViews].[MealsCount] AS [MealsCount],
-                            [PersonSummaryViews].[HydrationCount] AS [HydrationCount]
-                            FROM [dbo].[PersonSummaryViews] AS [PersonSummaryViews]
-                        </DefiningQuery>
-                    </EntitySet>
-                    <AssociationSet Name="FK_Activities_ActivityTypes" Association="HealthTrackerModel.Store.FK_Activities_ActivityTypes">
-                        <End Role="ActivityTypes" EntitySet="ActivityTypes" />
-                        <End Role="Activities" EntitySet="Activities" />
-                    </AssociationSet>
-                    <AssociationSet Name="FK_dbo_Activities_dbo_People_PersonId" Association="HealthTrackerModel.Store.FK_dbo_Activities_dbo_People_PersonId">
-                        <End Role="People" EntitySet="People" />
-                        <End Role="Activities" EntitySet="Activities" />
-                    </AssociationSet>
-                    <AssociationSet Name="FK_dbo_Hydrations_dbo_People_PersonId" Association="HealthTrackerModel.Store.FK_dbo_Hydrations_dbo_People_PersonId">
-                        <End Role="People" EntitySet="People" />
-                        <End Role="Hydrations" EntitySet="Hydrations" />
-                    </AssociationSet>
-                    <AssociationSet Name="FK_dbo_Meals_dbo_People_PersonId" Association="HealthTrackerModel.Store.FK_dbo_Meals_dbo_People_PersonId">
-                        <End Role="People" EntitySet="People" />
-                        <End Role="Meals" EntitySet="Meals" />
-                    </AssociationSet>
-                    <AssociationSet Name="FK_Meals_MealTypes" Association="HealthTrackerModel.Store.FK_Meals_MealTypes">
-                        <End Role="MealTypes" EntitySet="MealTypes" />
-                        <End Role="Meals" EntitySet="Meals" />
-                    </AssociationSet>
-                </EntityContainer>
-                <EntityType Name="Activities">
-                    <Key>
-                        <PropertyRef Name="ActivityId" />
-                    </Key>
-                    <Property Name="ActivityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Date" Type="datetime" Nullable="false" />
-                    <Property Name="ActivityTypeId" Type="int" Nullable="false" />
-                    <Property Name="Notes" Type="nvarchar" MaxLength="100" />
-                    <Property Name="PersonId" Type="int" Nullable="false" />
-                </EntityType>
-                <EntityType Name="ActivityTypes">
-                    <Key>
-                        <PropertyRef Name="ActivityTypeId" />
-                    </Key>
-                    <Property Name="ActivityTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
-                </EntityType>
-                <EntityType Name="Hydrations">
-                    <Key>
-                        <PropertyRef Name="HydrationId" />
-                    </Key>
-                    <Property Name="HydrationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Date" Type="datetime" Nullable="false" />
-                    <Property Name="Count" Type="int" Nullable="false" />
-                    <Property Name="PersonId" Type="int" Nullable="false" />
-                </EntityType>
-                <EntityType Name="Meals">
-                    <Key>
-                        <PropertyRef Name="MealId" />
-                    </Key>
-                    <Property Name="MealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Date" Type="datetime" Nullable="false" />
-                    <Property Name="MealTypeId" Type="int" Nullable="false" />
-                    <Property Name="Description" Type="nvarchar" MaxLength="100" />
-                    <Property Name="PersonId" Type="int" Nullable="false" />
-                </EntityType>
-                <EntityType Name="MealTypes">
-                    <Key>
-                        <PropertyRef Name="MealTypeId" />
-                    </Key>
-                    <Property Name="MealTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
-                </EntityType>
-                <EntityType Name="People">
-                    <Key>
-                        <PropertyRef Name="PersonId" />
-                    </Key>
-                    <Property Name="PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-                </EntityType>
-                <!--Errors Found During Generation:
+        <Schema Namespace="HealthTrackerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HealthTrackerModelStoreContainer">
+          <EntitySet Name="Activities" EntityType="HealthTrackerModel.Store.Activities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ActivityTypes" EntityType="HealthTrackerModel.Store.ActivityTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Hydrations" EntityType="HealthTrackerModel.Store.Hydrations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Meals" EntityType="HealthTrackerModel.Store.Meals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MealTypes" EntityType="HealthTrackerModel.Store.MealTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="People" EntityType="HealthTrackerModel.Store.People" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonSummaryViews" EntityType="HealthTrackerModel.Store.PersonSummaryViews" store:Type="Views" store:Schema="dbo" store:Name="PersonSummaryViews">
+            <DefiningQuery>SELECT 
+      [PersonSummaryViews].[PersonId] AS [PersonId], 
+      [PersonSummaryViews].[Name] AS [Name], 
+      [PersonSummaryViews].[ActivitiesCount] AS [ActivitiesCount], 
+      [PersonSummaryViews].[MealsCount] AS [MealsCount], 
+      [PersonSummaryViews].[HydrationCount] AS [HydrationCount]
+      FROM [dbo].[PersonSummaryViews] AS [PersonSummaryViews]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Activities_ActivityTypes" Association="HealthTrackerModel.Store.FK_Activities_ActivityTypes">
+            <End Role="ActivityTypes" EntitySet="ActivityTypes" />
+            <End Role="Activities" EntitySet="Activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Activities_dbo_People_PersonId" Association="HealthTrackerModel.Store.FK_dbo_Activities_dbo_People_PersonId">
+            <End Role="People" EntitySet="People" />
+            <End Role="Activities" EntitySet="Activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Hydrations_dbo_People_PersonId" Association="HealthTrackerModel.Store.FK_dbo_Hydrations_dbo_People_PersonId">
+            <End Role="People" EntitySet="People" />
+            <End Role="Hydrations" EntitySet="Hydrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Meals_dbo_People_PersonId" Association="HealthTrackerModel.Store.FK_dbo_Meals_dbo_People_PersonId">
+            <End Role="People" EntitySet="People" />
+            <End Role="Meals" EntitySet="Meals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Meals_MealTypes" Association="HealthTrackerModel.Store.FK_Meals_MealTypes">
+            <End Role="MealTypes" EntitySet="MealTypes" />
+            <End Role="Meals" EntitySet="Meals" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Activities">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="ActivityTypeId" Type="int" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="100" />
+          <Property Name="PersonId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActivityTypes">
+          <Key>
+            <PropertyRef Name="ActivityTypeId" />
+          </Key>
+          <Property Name="ActivityTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hydrations">
+          <Key>
+            <PropertyRef Name="HydrationId" />
+          </Key>
+          <Property Name="HydrationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="PersonId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Meals">
+          <Key>
+            <PropertyRef Name="MealId" />
+          </Key>
+          <Property Name="MealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="MealTypeId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+          <Property Name="PersonId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MealTypes">
+          <Key>
+            <PropertyRef Name="MealTypeId" />
+          </Key>
+          <Property Name="MealTypeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="People">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'HealthTracker.dbo.PersonSummaryViews' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
-                <EntityType Name="PersonSummaryViews">
-                    <Key>
-                        <PropertyRef Name="PersonId" />
-                        <PropertyRef Name="Name" />
-                    </Key>
-                    <Property Name="PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-                    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
-                    <Property Name="ActivitiesCount" Type="int" />
-                    <Property Name="MealsCount" Type="int" />
-                    <Property Name="HydrationCount" Type="int" />
-                </EntityType>
-                <Association Name="FK_Activities_ActivityTypes">
-                    <End Role="ActivityTypes" Type="HealthTrackerModel.Store.ActivityTypes" Multiplicity="1" />
-                    <End Role="Activities" Type="HealthTrackerModel.Store.Activities" Multiplicity="*" />
-                    <ReferentialConstraint>
-                        <Principal Role="ActivityTypes">
-                            <PropertyRef Name="ActivityTypeId" />
-                        </Principal>
-                        <Dependent Role="Activities">
-                            <PropertyRef Name="ActivityTypeId" />
-                        </Dependent>
-                    </ReferentialConstraint>
-                </Association>
-                <Association Name="FK_dbo_Activities_dbo_People_PersonId">
-                    <End Role="People" Type="HealthTrackerModel.Store.People" Multiplicity="1">
-                        <OnDelete Action="Cascade" />
-                    </End>
-                    <End Role="Activities" Type="HealthTrackerModel.Store.Activities" Multiplicity="*" />
-                    <ReferentialConstraint>
-                        <Principal Role="People">
-                            <PropertyRef Name="PersonId" />
-                        </Principal>
-                        <Dependent Role="Activities">
-                            <PropertyRef Name="PersonId" />
-                        </Dependent>
-                    </ReferentialConstraint>
-                </Association>
-                <Association Name="FK_dbo_Hydrations_dbo_People_PersonId">
-                    <End Role="People" Type="HealthTrackerModel.Store.People" Multiplicity="1">
-                        <OnDelete Action="Cascade" />
-                    </End>
-                    <End Role="Hydrations" Type="HealthTrackerModel.Store.Hydrations" Multiplicity="*" />
-                    <ReferentialConstraint>
-                        <Principal Role="People">
-                            <PropertyRef Name="PersonId" />
-                        </Principal>
-                        <Dependent Role="Hydrations">
-                            <PropertyRef Name="PersonId" />
-                        </Dependent>
-                    </ReferentialConstraint>
-                </Association>
-                <Association Name="FK_dbo_Meals_dbo_People_PersonId">
-                    <End Role="People" Type="HealthTrackerModel.Store.People" Multiplicity="1">
-                        <OnDelete Action="Cascade" />
-                    </End>
-                    <End Role="Meals" Type="HealthTrackerModel.Store.Meals" Multiplicity="*" />
-                    <ReferentialConstraint>
-                        <Principal Role="People">
-                            <PropertyRef Name="PersonId" />
-                        </Principal>
-                        <Dependent Role="Meals">
-                            <PropertyRef Name="PersonId" />
-                        </Dependent>
-                    </ReferentialConstraint>
-                </Association>
-                <Association Name="FK_Meals_MealTypes">
-                    <End Role="MealTypes" Type="HealthTrackerModel.Store.MealTypes" Multiplicity="1" />
-                    <End Role="Meals" Type="HealthTrackerModel.Store.Meals" Multiplicity="*" />
-                    <ReferentialConstraint>
-                        <Principal Role="MealTypes">
-                            <PropertyRef Name="MealTypeId" />
-                        </Principal>
-                        <Dependent Role="Meals">
-                            <PropertyRef Name="MealTypeId" />
-                        </Dependent>
-                    </ReferentialConstraint>
-                </Association>
-                <Function Name="CountActivities" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-                    <CommandText>
-                        SELECT [dbo].[CountActivities] (@personId)
-                    </CommandText>
-                    <Parameter Name="personId" Type="int" Mode="In" />
-                </Function>
-                <Function Name="CountHydrations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-                    <CommandText>
-                        SELECT [dbo].[CountHydrations] (@personId)
-                    </CommandText>
-                    <Parameter Name="personId" Type="int" Mode="In" />
-                </Function>
-                <Function Name="CountMeals" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-                    <CommandText>
-                        SELECT [dbo].[CountMeals] (@personId)
-                    </CommandText>
-                    <Parameter Name="personId" Type="int" Mode="In" />
-                </Function>
-                <Function Name="GetPersonSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-                    <Parameter Name="personId" Type="int" Mode="In" />
-                </Function>
-            </Schema>
-        </edmx:StorageModels>
+        <EntityType Name="PersonSummaryViews">
+          <Key>
+            <PropertyRef Name="PersonId" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="PersonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ActivitiesCount" Type="int" />
+          <Property Name="MealsCount" Type="int" />
+          <Property Name="HydrationCount" Type="int" />
+        </EntityType>
+        <Association Name="FK_Activities_ActivityTypes">
+          <End Role="ActivityTypes" Type="HealthTrackerModel.Store.ActivityTypes" Multiplicity="1" />
+          <End Role="Activities" Type="HealthTrackerModel.Store.Activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivityTypes">
+              <PropertyRef Name="ActivityTypeId" />
+            </Principal>
+            <Dependent Role="Activities">
+              <PropertyRef Name="ActivityTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Activities_dbo_People_PersonId">
+          <End Role="People" Type="HealthTrackerModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Activities" Type="HealthTrackerModel.Store.Activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Activities">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Hydrations_dbo_People_PersonId">
+          <End Role="People" Type="HealthTrackerModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Hydrations" Type="HealthTrackerModel.Store.Hydrations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Hydrations">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Meals_dbo_People_PersonId">
+          <End Role="People" Type="HealthTrackerModel.Store.People" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Meals" Type="HealthTrackerModel.Store.Meals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="People">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Meals">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Meals_MealTypes">
+          <End Role="MealTypes" Type="HealthTrackerModel.Store.MealTypes" Multiplicity="1" />
+          <End Role="Meals" Type="HealthTrackerModel.Store.Meals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MealTypes">
+              <PropertyRef Name="MealTypeId" />
+            </Principal>
+            <Dependent Role="Meals">
+              <PropertyRef Name="MealTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CountActivities" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CountHydrations" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CountMeals" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetPersonSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="personId" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
         <!-- CSDL content -->
         <edmx:ConceptualModels>
             <Schema Namespace="HealthTrackerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -219,8 +207,8 @@
                         <End Role="Meals" EntitySet="Meals" />
                     </AssociationSet>
                     <FunctionImport Name="GetPersonSummary" ReturnType="Collection(HealthTrackerModel.GetPersonSummary_Result)">
-                        <Parameter Name="personId" Mode="In" Type="Int32" />
-                    </FunctionImport>
+          <Parameter Name="personId" Mode="In" Type="Int32" />
+          </FunctionImport>
                     <EntitySet Name="ActivityTypes" EntityType="HealthTrackerModel.ActivityType" />
                     <EntitySet Name="MealTypes" EntityType="HealthTrackerModel.MealType" />
                     <AssociationSet Name="FK_Activities_ActivityTypes" Association="HealthTrackerModel.FK_Activities_ActivityTypes">
@@ -231,12 +219,6 @@
                         <End Role="MealType" EntitySet="MealTypes" />
                         <End Role="Meal" EntitySet="Meals" />
                     </AssociationSet>
-                    <FunctionImport Name="CountActivities" ReturnType="Collection(Int32)">
-                        <Parameter Name="personId" Mode="In" Type="Int32" />
-                    </FunctionImport>
-          <FunctionImport Name="CountMeals" ReturnType="Collection(Int32)">
-            <Parameter Name="personId" Mode="In" Type="Int32" />
-          </FunctionImport>
                 </EntityContainer>
                 <EntityType Name="Activity">
                     <Key>
@@ -466,8 +448,6 @@
                             </MappingFragment>
                         </EntityTypeMapping>
                     </EntitySetMapping>
-                    <FunctionImportMapping FunctionImportName="CountActivities" FunctionName="HealthTrackerModel.Store.CountActivities" />
-          <FunctionImportMapping FunctionImportName="CountMeals" FunctionName="HealthTrackerModel.Store.CountMeals" />
                 </EntityContainerMapping>
             </Mapping>
         </edmx:Mappings>

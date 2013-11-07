@@ -44,23 +44,5 @@ namespace HealthTracker.DataAccess.DbFirst
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPersonSummary_Result>("GetPersonSummary", personIdParameter);
         }
-    
-        public virtual ObjectResult<Nullable<int>> CountActivities(Nullable<int> personId)
-        {
-            var personIdParameter = personId.HasValue ?
-                new ObjectParameter("personId", personId) :
-                new ObjectParameter("personId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CountActivities", personIdParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<int>> CountMeals(Nullable<int> personId)
-        {
-            var personIdParameter = personId.HasValue ?
-                new ObjectParameter("personId", personId) :
-                new ObjectParameter("personId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("CountMeals", personIdParameter);
-        }
     }
 }
