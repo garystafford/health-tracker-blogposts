@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.DataAccess.DbFirst", "HealthTracker.DataAccess.DbFirst\HealthTracker.DataAccess.DbFirst.csproj", "{1C699F6D-0EF2-4E87-841F-F25D551B5D3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.UnitTests", "HealthTrackerUnitTests\HealthTracker.UnitTests.csproj", "{D50EC0B8-E6FF-4F0C-9EA8-4E899D066018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.WcfService", "HealthTracker.WcfServiceApp\HealthTracker.WcfService.csproj", "{FA94ABC7-3C27-48ED-8CC3-B5F595048A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.ConsoleApp", "HealthTracker.ConsoleApp\HealthTracker.ConsoleApp.csproj", "{FE879213-0E35-4354-95C7-7F25810F585F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.DataAccess", "HealthTrackerDataAccess\HealthTracker.DataAccess.csproj", "{B656FEF5-82CF-483E-95D0-6861AAE4AC22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeFirstPost", "CodeFirstPost", "{74052CDB-95AD-46D0-9CF2-1A976A778524}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseFirstPost", "DatabaseFirstPost", "{EB190FBB-AE5D-4C33-A863-9BE90FF0A309}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WcfServicePost", "WcfServicePost", "{C7D78ACD-3813-4E06-9ACB-7AA701F4B24F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.WcfService.UnitTests", "HealthTracker.WcfService.UnitTests\HealthTracker.WcfService.UnitTests.csproj", "{6F8426B5-8885-4A90-B63F-E4FFE67C41D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C699F6D-0EF2-4E87-841F-F25D551B5D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C699F6D-0EF2-4E87-841F-F25D551B5D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C699F6D-0EF2-4E87-841F-F25D551B5D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C699F6D-0EF2-4E87-841F-F25D551B5D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D50EC0B8-E6FF-4F0C-9EA8-4E899D066018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D50EC0B8-E6FF-4F0C-9EA8-4E899D066018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D50EC0B8-E6FF-4F0C-9EA8-4E899D066018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D50EC0B8-E6FF-4F0C-9EA8-4E899D066018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA94ABC7-3C27-48ED-8CC3-B5F595048A02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA94ABC7-3C27-48ED-8CC3-B5F595048A02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA94ABC7-3C27-48ED-8CC3-B5F595048A02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA94ABC7-3C27-48ED-8CC3-B5F595048A02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE879213-0E35-4354-95C7-7F25810F585F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE879213-0E35-4354-95C7-7F25810F585F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE879213-0E35-4354-95C7-7F25810F585F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE879213-0E35-4354-95C7-7F25810F585F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B656FEF5-82CF-483E-95D0-6861AAE4AC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B656FEF5-82CF-483E-95D0-6861AAE4AC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B656FEF5-82CF-483E-95D0-6861AAE4AC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B656FEF5-82CF-483E-95D0-6861AAE4AC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8426B5-8885-4A90-B63F-E4FFE67C41D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8426B5-8885-4A90-B63F-E4FFE67C41D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8426B5-8885-4A90-B63F-E4FFE67C41D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8426B5-8885-4A90-B63F-E4FFE67C41D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D50EC0B8-E6FF-4F0C-9EA8-4E899D066018} = {EB190FBB-AE5D-4C33-A863-9BE90FF0A309}
+		{1C699F6D-0EF2-4E87-841F-F25D551B5D3C} = {EB190FBB-AE5D-4C33-A863-9BE90FF0A309}
+		{FA94ABC7-3C27-48ED-8CC3-B5F595048A02} = {C7D78ACD-3813-4E06-9ACB-7AA701F4B24F}
+		{6F8426B5-8885-4A90-B63F-E4FFE67C41D3} = {C7D78ACD-3813-4E06-9ACB-7AA701F4B24F}
+		{B656FEF5-82CF-483E-95D0-6861AAE4AC22} = {74052CDB-95AD-46D0-9CF2-1A976A778524}
+		{FE879213-0E35-4354-95C7-7F25810F585F} = {74052CDB-95AD-46D0-9CF2-1A976A778524}
+	EndGlobalSection
+EndGlobal
