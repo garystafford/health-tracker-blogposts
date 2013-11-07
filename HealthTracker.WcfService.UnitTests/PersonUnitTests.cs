@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using HealthTracker.DataAccess.DbFirst;
 
 namespace HealthTracker.WcfService.UnitTests
 {
     [TestClass]
     public class PersonUnitTests
     {
-        private HealthTrackerWcfService _wcfService = new HealthTrackerWcfService();
+        private readonly HealthTrackerWcfService _wcfService = new HealthTrackerWcfService();
 
         [TestMethod]
         public void GetPeopleTest()
@@ -25,7 +24,7 @@ namespace HealthTracker.WcfService.UnitTests
         [TestMethod]
         public void UpdatePerson()
         {
-            Assert.IsTrue(_wcfService.UpdatePerson(new Person()
+            Assert.IsTrue(_wcfService.UpdatePerson(person: new Person
                                                        {
                                                            Name = DateTime.Now.Ticks.ToString(
                                                            CultureInfo.InvariantCulture),
