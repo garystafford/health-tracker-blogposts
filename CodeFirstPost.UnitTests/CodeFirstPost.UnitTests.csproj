@@ -69,10 +69,19 @@
       <Project>{fe879213-0e35-4354-95c7-7f25810f585f}</Project>
       <Name>HealthTracker.ConsoleApp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HealthTrackerDataAccess\HealthTracker.DataAccess.csproj">
+      <Project>{b656fef5-82cf-483e-95d0-6861aae4ac22}</Project>
+      <Name>HealthTracker.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HealthTracker_Sample_Data.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
