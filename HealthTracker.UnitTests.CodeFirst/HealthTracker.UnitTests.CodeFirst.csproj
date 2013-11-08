@@ -6,8 +6,8 @@
     <ProjectGuid>{D2E81BDB-2873-41F3-9010-7AF9328CCDB5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CodeFirstPost.UnitTests</RootNamespace>
-    <AssemblyName>CodeFirstPost.UnitTests</AssemblyName>
+    <RootNamespace>HealthTracker.UnitTests.CodeFirst</RootNamespace>
+    <AssemblyName>HealthTracker.UnitTests.CodeFirst</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -69,9 +69,9 @@
       <Project>{fe879213-0e35-4354-95c7-7f25810f585f}</Project>
       <Name>HealthTracker.ConsoleApp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HealthTrackerDataAccess\HealthTracker.DataAccess.csproj">
+    <ProjectReference Include="..\HealthTracker.DataAccess.CodeFirst\HealthTracker.DataAccess.CodeFirst.csproj">
       <Project>{b656fef5-82cf-483e-95d0-6861aae4ac22}</Project>
-      <Name>HealthTracker.DataAccess</Name>
+      <Name>HealthTracker.DataAccess.CodeFirst</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
