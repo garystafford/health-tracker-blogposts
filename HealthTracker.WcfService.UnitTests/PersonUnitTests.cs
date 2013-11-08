@@ -25,11 +25,11 @@ namespace HealthTracker.WcfService.UnitTests
         public void UpdatePerson()
         {
             Assert.IsTrue(_wcfService.UpdatePerson(person: new Person
-                                                       {
-                                                           Name = DateTime.Now.Ticks.ToString(
-                                                           CultureInfo.InvariantCulture),
-                                                           PersonId = 2
-                                                       }));
+            {
+                Name = DateTime.Now.Ticks.ToString(
+                CultureInfo.InvariantCulture),
+                PersonId = 2
+            }));
         }
     }
 }

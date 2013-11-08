@@ -11,15 +11,16 @@ namespace HealthTracker.DataAccess.DbFirst
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Objects;
+    //using System.Data.Objects;
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class HealthTrackerEntities : DbContext
+    public partial class HealthTrackerEntities2 : DbContext
     {
-        public HealthTrackerEntities()
-            : base("name=HealthTrackerEntities")
+        public HealthTrackerEntities2()
+            : base("name=HealthTrackerEntities2")
         {
         }
     
@@ -29,12 +30,25 @@ namespace HealthTracker.DataAccess.DbFirst
         }
     
         public DbSet<Activity> Activities { get; set; }
+        public DbSet<ActivityType> ActivityTypes { get; set; }
         public DbSet<Hydration> Hydrations { get; set; }
         public DbSet<Meal> Meals { get; set; }
+        public DbSet<MealType> MealTypes { get; set; }
         public DbSet<Person> People { get; set; }
         public DbSet<PersonSummaryView> PersonSummaryViews { get; set; }
-        public DbSet<ActivityType> ActivityTypes { get; set; }
-        public DbSet<MealType> MealTypes { get; set; }
+    
+        public virtual ObjectResult<GetActivitiesViews_Result> GetActivitiesViews(Nullable<int> personId, Nullable<int> viewId)
+        {
+            var personIdParameter = personId.HasValue ?
+                new ObjectParameter("personId", personId) :
+                new ObjectParameter("personId", typeof(int));
+    
+            var viewIdParameter = viewId.HasValue ?
+                new ObjectParameter("viewId", viewId) :
+                new ObjectParameter("viewId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetActivitiesViews_Result>("GetActivitiesViews", personIdParameter, viewIdParameter);
+        }
     
         public virtual ObjectResult<GetPersonSummary_Result> GetPersonSummary(Nullable<int> personId)
         {

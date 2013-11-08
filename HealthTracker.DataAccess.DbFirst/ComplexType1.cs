@@ -10,17 +10,8 @@
 namespace HealthTracker.DataAccess.DbFirst
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Activity
+    public partial class ComplexType1
     {
-        public int ActivityId { get; set; }
-        public System.DateTime Date { get; set; }
-        public int ActivityTypeId { get; set; }
-        public string Notes { get; set; }
-        public int PersonId { get; set; }
-    
-        public virtual ActivityType ActivityType { get; set; }
-        public virtual Person Person { get; set; }
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="ActivityType.cs">
       <DependentUpon>HealthTracker.tt</DependentUpon>
     </Compile>
+    <Compile Include="ComplexType1.cs">
+      <DependentUpon>HealthTracker.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetActivitiesViews_Result.cs">
+      <DependentUpon>HealthTracker.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetPersonSummary_Result.cs">
       <DependentUpon>HealthTracker.tt</DependentUpon>
     </Compile>

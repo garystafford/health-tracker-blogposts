@@ -22,7 +22,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     dbContext.People.Add(new DataAccess.DbFirst.Person { Name = person.Name });
                     dbContext.SaveChanges();
@@ -45,7 +45,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var personToUpdate = dbContext.People.First(p => p.PersonId == person.PersonId);
                     if (personToUpdate == null) return false;
@@ -70,7 +70,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var personToDelete = dbContext.People.First(p => p.PersonId == personId);
                     if (personToDelete == null) return false;
@@ -95,7 +95,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var personId = dbContext.People
                                             .Where(person => person.Name == personName)
@@ -119,7 +119,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var people = (dbContext.People.Select(p => p));
                     var peopleList = people.Select(p => new Person
@@ -146,7 +146,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     dbContext.Meals.Add(new DataAccess.DbFirst.Meal
                                             {
@@ -175,7 +175,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var mealToDelete = dbContext.Meals.First(m => m.MealTypeId == mealId);
                     if (mealToDelete == null) return false;
@@ -200,7 +200,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var meals = dbContext.Meals.Where(m => m.PersonId == personId)
                                          .Select(m => new MealDetail
@@ -229,7 +229,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     dbContext.Activities.Add(new DataAccess.DbFirst.Activity
                                                  {
@@ -259,7 +259,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var activityToDelete = dbContext.Activities.First(a => a.ActivityId == activityId);
                     if (activityToDelete == null) return false;
@@ -284,7 +284,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var activities = dbContext.Activities.Where(a => a.PersonId == personId)
                                               .Select(a => new ActivityDetail
@@ -314,7 +314,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var existingHydration = dbContext.Hydrations.First(
                         hydration => hydration.PersonId == personId
@@ -354,7 +354,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var personView = (dbContext.PersonSummaryViews
                                                .Where(p => p.PersonId == personId))
@@ -379,7 +379,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities())
+                using (var dbContext = new HealthTrackerEntities2())
                 {
                     var personView = (dbContext.GetPersonSummary(personId)
                                                .Where(p => p.PersonId == personId))

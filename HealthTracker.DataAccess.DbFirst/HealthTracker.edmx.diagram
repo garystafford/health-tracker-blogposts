@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5d9af923b8f14e56b1a6a69d28759d81" Name="HealthTrackerDiagram">
-        <EntityTypeShape EntityType="HealthTrackerModel.Activity" Width="1.5" PointX="2.75" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HealthTrackerModel.Hydration" Width="1.5" PointX="2.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="HealthTrackerModel.Meal" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HealthTrackerModel.Person" Width="1.5" PointX="0.5" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HealthTrackerModel.PersonSummaryView" Width="2" PointX="5.75" PointY="5.75" IsExpanded="true" />
+      <Diagram DiagramId="582ef7c1aa93484e951383cf6f3b5e29" Name="Diagram1">
+        <EntityTypeShape EntityType="HealthTrackerModel.Activity" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.ActivityType" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.Hydration" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.Meal" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.MealType" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.Person" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.PersonSummaryView" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="HealthTrackerModel.FK_Activities_ActivityTypes" ManuallyRouted="false" />
         <AssociationConnector Association="HealthTrackerModel.FK_dbo_Activities_dbo_People_PersonId" ManuallyRouted="false" />
         <AssociationConnector Association="HealthTrackerModel.FK_dbo_Hydrations_dbo_People_PersonId" ManuallyRouted="false" />
         <AssociationConnector Association="HealthTrackerModel.FK_dbo_Meals_dbo_People_PersonId" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="HealthTrackerModel.ActivityType" Width="1.5" PointX="5" PointY="3.25" />
-        <EntityTypeShape EntityType="HealthTrackerModel.MealType" Width="1.5" PointX="5" PointY="0.5" />
-        <AssociationConnector Association="HealthTrackerModel.FK_Activities_ActivityTypes" />
-        <AssociationConnector Association="HealthTrackerModel.FK_Meals_MealTypes" />
+        <AssociationConnector Association="HealthTrackerModel.FK_Meals_MealTypes" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

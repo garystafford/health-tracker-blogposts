@@ -35,14 +35,15 @@ namespace HealthTracker.ConsoleApp
         /// Example of Adding a new Person
         /// </summary>
         /// <param name="name">Name of the Person</param>
-        public static void CreatePerson(string name)
+        public static int CreatePerson(string name)
         {
             using (var db = new HealthTrackerContext())
             {
                 // Add a new Person
                 db.Persons.Add(new Person { Name = name });
-                db.SaveChanges();
+                var result = db.SaveChanges();
                 Console.WriteLine("New Person, {0}, added...", name);
+                return result;
             }
         }
 
@@ -83,7 +84,7 @@ namespace HealthTracker.ConsoleApp
         /// Example of adding two Meals.
         /// </summary>
         /// <param name="personId">Person's unique PersonId</param>
-        public static void CreateMeals(int personId)
+        public static int CreateMeals(int personId)
         {
             using (var db = new HealthTrackerContext())
             {
@@ -91,7 +92,7 @@ namespace HealthTracker.ConsoleApp
                 {
                     PersonId = personId,
                     Date = Today,
-                    Type = MealType.Breakfast,
+                    MealTypeId = MealType.Breakfast,
                     Description = "(2) slices toast, (1) glass orange juice"
                 });
 
@@ -99,12 +100,13 @@ namespace HealthTracker.ConsoleApp
                 {
                     PersonId = personId,
                     Date = Today,
-                    Type = MealType.Lunch,
+                    MealTypeId = MealType.Lunch,
                     Description = "(1) protein shake, (1) apple"
                 });
 
-                db.SaveChanges();
+                var result = db.SaveChanges();
                 Console.WriteLine("Two new Meals added...");
+                return result;
             }
         }
 
@@ -120,7 +122,7 @@ namespace HealthTracker.ConsoleApp
                 {
                     PersonId = personId,
                     Date = Today,
-                    Type = ActivityType.Treadmill,
+                    ActivityTypeId = ActivityType.Treadmill,
                     Notes = "30 minutes, 500 calories"
                 });
 

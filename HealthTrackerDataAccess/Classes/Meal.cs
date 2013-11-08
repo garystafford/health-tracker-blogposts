@@ -12,7 +12,7 @@ namespace HealthTracker.DataAccess.Classes
 
         [Required]
         [EnumDataType(typeof(MealType))]
-        public MealType Type { get; set; }
+        public MealType MealTypeId { get; set; }
 
         [StringLength(100, ErrorMessage =
             "Description must be less than 100 characters.")]

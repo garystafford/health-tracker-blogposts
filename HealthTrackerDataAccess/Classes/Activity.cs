@@ -12,7 +12,7 @@ namespace HealthTracker.DataAccess.Classes
 
         [Required]
         [EnumDataType(typeof(ActivityType))]
-        public ActivityType Type { get; set; }
+        public ActivityType ActivityTypeId { get; set; }
 
         [StringLength(100, ErrorMessage = 
             "Note must be less than 100 characters.")]

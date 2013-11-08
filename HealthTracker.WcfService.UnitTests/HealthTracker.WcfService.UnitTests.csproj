@@ -45,7 +45,6 @@
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -64,10 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HealthTracker.DataAccess.DbFirst\HealthTracker.DataAccess.DbFirst.csproj">
-      <Project>{1c699f6d-0ef2-4e87-841f-f25d551b5d3c}</Project>
-      <Name>HealthTracker.DataAccess.DbFirst</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HealthTracker.WcfServiceApp\HealthTracker.WcfService.csproj">
       <Project>{fa94abc7-3c27-48ed-8cc3-b5f595048a02}</Project>
       <Name>HealthTracker.WcfService</Name>
