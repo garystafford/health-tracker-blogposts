@@ -56,12 +56,6 @@
     <Compile Include="ActivityType.cs">
       <DependentUpon>HealthTracker.tt</DependentUpon>
     </Compile>
-    <Compile Include="ComplexType1.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GetActivitiesViews_Result.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
-    </Compile>
     <Compile Include="GetPersonSummary_Result.cs">
       <DependentUpon>HealthTracker.tt</DependentUpon>
     </Compile>
@@ -80,7 +74,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HealthTracker.edmx</DependentUpon>
     </Compile>
-    <Compile Include="HealthTracker.Views.cs" />
     <Compile Include="Hydration.cs">
       <DependentUpon>HealthTracker.tt</DependentUpon>
     </Compile>
@@ -104,18 +97,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HealthTracker.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="HealthTracker.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HealthTracker.edmx</DependentUpon>
-      <LastGenOutput>HealthTracker.Context.cs</LastGenOutput>
-    </None>
     <None Include="HealthTracker.edmx.diagram">
       <DependentUpon>HealthTracker.edmx</DependentUpon>
-    </None>
-    <None Include="HealthTracker.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HealthTracker.edmx</DependentUpon>
-      <LastGenOutput>HealthTracker.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -126,6 +109,16 @@
     <Content Include="DatabaseScripts\HealthTracker_Add_Optional_Credentials.sql" />
     <Content Include="DatabaseScripts\HealthTracker_Create_All_Objects.sql" />
     <Content Include="DatabaseScripts\HealthTracker_Sample_Data.sql" />
+    <Content Include="HealthTracker.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HealthTracker.edmx</DependentUpon>
+      <LastGenOutput>HealthTracker.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HealthTracker.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HealthTracker.edmx</DependentUpon>
+      <LastGenOutput>HealthTracker.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

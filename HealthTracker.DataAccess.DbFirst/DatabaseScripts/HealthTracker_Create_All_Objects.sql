@@ -245,7 +245,7 @@ PRINT N'Checking existing data against newly created constraints';
 
 
 GO
-USE [$(DatabaseName)];
+USE HealthTracker
 
 
 GO

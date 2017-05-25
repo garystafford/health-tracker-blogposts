@@ -76,6 +76,10 @@
       <Project>{1c699f6d-0ef2-4e87-841f-f25d551b5d3c}</Project>
       <Name>HealthTracker.DataAccess.DbFirst</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HealthTracker.UnitTests.CodeFirst\HealthTracker.UnitTests.CodeFirst.csproj">
+      <Project>{D2E81BDB-2873-41F3-9010-7AF9328CCDB5}</Project>
+      <Name>HealthTracker.UnitTests.CodeFirst</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

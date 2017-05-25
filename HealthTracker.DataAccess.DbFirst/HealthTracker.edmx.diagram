@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="582ef7c1aa93484e951383cf6f3b5e29" Name="Diagram1">
+      <Diagram DiagramId="8e159f810d3d41db82d79acae77fc431" Name="Diagram1">
         <EntityTypeShape EntityType="HealthTrackerModel.Activity" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HealthTrackerModel.ActivityType" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HealthTrackerModel.Hydration" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HealthTrackerModel.Hydration" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HealthTrackerModel.Meal" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HealthTrackerModel.MealType" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HealthTrackerModel.Person" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />

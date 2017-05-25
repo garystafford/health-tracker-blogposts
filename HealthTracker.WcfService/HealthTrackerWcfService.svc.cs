@@ -12,6 +12,11 @@ namespace HealthTracker.WcfService
     {
         private readonly DateTime _today = DateTime.Now.Date;
 
+        private static HealthTrackerEntities GetDbContext()
+        {
+            return new HealthTrackerEntities();
+        }
+
         #region Service Operations
         /// <summary>
         /// Example of Adding a new Person.
@@ -22,7 +27,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     dbContext.People.Add(new DataAccess.DbFirst.Person { Name = person.Name });
                     dbContext.SaveChanges();
@@ -45,7 +50,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var personToUpdate = dbContext.People.First(p => p.PersonId == person.PersonId);
                     if (personToUpdate == null) return false;
@@ -70,7 +75,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var personToDelete = dbContext.People.First(p => p.PersonId == personId);
                     if (personToDelete == null) return false;
@@ -95,7 +100,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var personId = dbContext.People
                                             .Where(person => person.Name == personName)
@@ -119,14 +124,14 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var people = (dbContext.People.Select(p => p));
                     var peopleList = people.Select(p => new Person
-                                                            {
-                                                                PersonId = p.PersonId,
-                                                                Name = p.Name
-                                                            }).ToList();
+                    {
+                        PersonId = p.PersonId,
+                        Name = p.Name
+                    }).ToList();
 
                     return peopleList;
                 }
@@ -146,15 +151,15 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     dbContext.Meals.Add(new DataAccess.DbFirst.Meal
-                                            {
-                                                PersonId = meal.PersonId,
-                                                Date = _today,
-                                                MealTypeId = meal.MealTypeId,
-                                                Description = meal.Description
-                                            });
+                    {
+                        PersonId = meal.PersonId,
+                        Date = _today,
+                        MealTypeId = meal.MealTypeId,
+                        Description = meal.Description
+                    });
                     dbContext.SaveChanges();
                     return true;
                 }
@@ -175,7 +180,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var mealToDelete = dbContext.Meals.First(m => m.MealTypeId == mealId);
                     if (mealToDelete == null) return false;
@@ -200,16 +205,16 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var meals = dbContext.Meals.Where(m => m.PersonId == personId)
                                          .Select(m => new MealDetail
-                                                          {
-                                                              MealId = m.MealId,
-                                                              Date = m.Date,
-                                                              Type = m.MealType.Description,
-                                                              Description = m.Description
-                                                          }).ToList();
+                                         {
+                                             MealId = m.MealId,
+                                             Date = m.Date,
+                                             Type = m.MealType.Description,
+                                             Description = m.Description
+                                         }).ToList();
                     return meals;
                 }
             }
@@ -229,15 +234,15 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     dbContext.Activities.Add(new DataAccess.DbFirst.Activity
-                                                 {
-                                                     PersonId = activity.PersonId,
-                                                     Date = _today,
-                                                     ActivityTypeId = activity.ActivityTypeId,
-                                                     Notes = activity.Notes
-                                                 });
+                    {
+                        PersonId = activity.PersonId,
+                        Date = _today,
+                        ActivityTypeId = activity.ActivityTypeId,
+                        Notes = activity.Notes
+                    });
                     dbContext.SaveChanges();
                     return true;
                 }
@@ -259,7 +264,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var activityToDelete = dbContext.Activities.First(a => a.ActivityId == activityId);
                     if (activityToDelete == null) return false;
@@ -284,16 +289,16 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var activities = dbContext.Activities.Where(a => a.PersonId == personId)
                                               .Select(a => new ActivityDetail
-                                                               {
-                                                                   ActivityId = a.ActivityId,
-                                                                   Date = a.Date,
-                                                                   Type = a.ActivityType.Description,
-                                                                   Notes = a.Notes
-                                                               }).ToList();
+                                              {
+                                                  ActivityId = a.ActivityId,
+                                                  Date = a.Date,
+                                                  Type = a.ActivityType.Description,
+                                                  Notes = a.Notes
+                                              }).ToList();
                     return activities;
                 }
             }
@@ -314,7 +319,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var existingHydration = dbContext.Hydrations.First(
                         hydration => hydration.PersonId == personId
@@ -328,11 +333,11 @@ namespace HealthTracker.WcfService
                     }
 
                     dbContext.Hydrations.Add(new Hydration
-                                                 {
-                                                     PersonId = personId,
-                                                     Date = _today,
-                                                     Count = 1
-                                                 });
+                    {
+                        PersonId = personId,
+                        Date = _today,
+                        Count = 1
+                    });
                     dbContext.SaveChanges();
                     return true;
                 }
@@ -354,7 +359,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var personView = (dbContext.PersonSummaryViews
                                                .Where(p => p.PersonId == personId))
@@ -379,7 +384,7 @@ namespace HealthTracker.WcfService
         {
             try
             {
-                using (var dbContext = new HealthTrackerEntities2())
+                using (var dbContext = GetDbContext())
                 {
                     var personView = (dbContext.GetPersonSummary(personId)
                                                .Where(p => p.PersonId == personId))

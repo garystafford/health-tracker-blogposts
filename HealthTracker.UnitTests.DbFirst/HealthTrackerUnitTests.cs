@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HealthTracker.DataAccess.DbFirst;
+using CodeFirstPost.UnitTests;
 
 namespace HealthTracker.UnitTests
 {
@@ -23,7 +24,7 @@ namespace HealthTracker.UnitTests
             var streamReader = new StreamReader(filePath);
             var sqlScript = streamReader.ReadToEnd();
             streamReader.Close();
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 var parameters = new object[] { };
                 dbContext.Database.ExecuteSqlCommand(sqlScript, parameters);
@@ -36,7 +37,7 @@ namespace HealthTracker.UnitTests
         [TestMethod]
         public void PersonCountTest()
         {
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 var personCount = (dbContext.People.Select(p => p)).Count();
                 Assert.IsTrue(personCount > 0);
@@ -49,7 +50,7 @@ namespace HealthTracker.UnitTests
         [TestMethod]
         public void PersonIdTest()
         {
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 var personId = dbContext.People
                     .Where(person => person.Name == PersonOriginal)
@@ -64,7 +65,7 @@ namespace HealthTracker.UnitTests
         [TestMethod]
         public void PersonAddNewTest()
         {
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 // Setup test
                 dbContext.People.Add(new Person { Name = PersonNew });
@@ -94,7 +95,7 @@ namespace HealthTracker.UnitTests
         [TestMethod]
         public void PersonUpdateNameTest()
         {
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 // Setup test
                 var personToUpdate = dbContext.People.FirstOrDefault(
@@ -123,7 +124,7 @@ namespace HealthTracker.UnitTests
         [TestMethod]
         public void PersonSummaryViewTest()
         {
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 var mealCount = (dbContext.PersonSummaryViews
                     .Where(p => p.PersonId == 1)
@@ -139,7 +140,7 @@ namespace HealthTracker.UnitTests
         [TestMethod]
         public void ActivtyCountFunctionFromDatabaseTest()
         {
-            using (var dbContext = new HealthTrackerEntities2())
+            using (var dbContext = new HealthTrackerEntities())
             {
                 const string sqlQuery = "SELECT [dbo].[CountActivities] ({0})";
                 object[] parameters = { 1 };
