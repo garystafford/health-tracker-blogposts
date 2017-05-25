@@ -18,7 +18,7 @@ namespace HealthTracker.DataAccess.DbFirst
     public partial class HealthTrackerEntities : DbContext
     {
         public HealthTrackerEntities()
-            : base("name=HealthTrackerEntities")
+            : base("HealthTrackerEntities")
         {
         }
     

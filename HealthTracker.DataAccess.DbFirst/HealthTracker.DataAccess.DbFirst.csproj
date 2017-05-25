@@ -51,54 +51,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ActivityType.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GetPersonSummary_Result.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HealthTracker.Context.cs">
+    <Compile Include="HealthTrackerModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HealthTracker.Context.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="HealthTracker.cs">
+    <Compile Include="HealthTrackerModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HealthTracker.Designer.cs">
+    <Compile Include="HealthTrackerModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HealthTracker.edmx</DependentUpon>
+      <DependentUpon>HealthTrackerModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Hydration.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Meal.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MealType.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Person.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PersonSummaryView.cs">
-      <DependentUpon>HealthTracker.tt</DependentUpon>
+      <DependentUpon>HealthTrackerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="HealthTracker.edmx">
+    <EntityDeploy Include="HealthTrackerModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HealthTracker.Designer.cs</LastGenOutput>
+      <LastGenOutput>HealthTrackerModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="HealthTracker.edmx.diagram">
-      <DependentUpon>HealthTracker.edmx</DependentUpon>
+    <None Include="HealthTrackerModel.edmx.diagram">
+      <DependentUpon>HealthTrackerModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -109,15 +109,15 @@
     <Content Include="DatabaseScripts\HealthTracker_Add_Optional_Credentials.sql" />
     <Content Include="DatabaseScripts\HealthTracker_Create_All_Objects.sql" />
     <Content Include="DatabaseScripts\HealthTracker_Sample_Data.sql" />
-    <Content Include="HealthTracker.Context.tt">
+    <Content Include="HealthTrackerModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HealthTracker.edmx</DependentUpon>
-      <LastGenOutput>HealthTracker.Context.cs</LastGenOutput>
+      <DependentUpon>HealthTrackerModel.edmx</DependentUpon>
+      <LastGenOutput>HealthTrackerModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="HealthTracker.tt">
+    <Content Include="HealthTrackerModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HealthTracker.edmx</DependentUpon>
-      <LastGenOutput>HealthTracker.cs</LastGenOutput>
+      <DependentUpon>HealthTrackerModel.edmx</DependentUpon>
+      <LastGenOutput>HealthTrackerModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
