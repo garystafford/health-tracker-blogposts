@@ -1,7 +1,7 @@
-health-tracker-blogposts
-========================
+HealthTracker Entity Framework Post Series
+==========================================
 
-Repository for a series of related Entity Framework blog posts
+Repository for a series of EntityFramework blog posts
 
 First Impressions of Code First Development with Entity Framework 5 in Visual Studio 2012: http://wp.me/p1RD28-lU
 
