@@ -1,0 +1,1 @@
+3Properties/AssemblyInfo.cs 2csX%

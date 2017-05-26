@@ -1,0 +1,1 @@
+HealthTracker.WcfServiceHealthTracker.WcfService :45J1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:FA94ABC7-3C27-48ED-8CC3-B5F595048A02

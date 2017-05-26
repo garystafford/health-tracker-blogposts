@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>HealthTracker.DataAccess.DbFirst</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>1c699f6d-0ef2-4e87-841f-f25d551b5d3c</ProjectGuid>
+  <FullPath>C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.DbFirst\HealthTracker.DataAccess.DbFirst.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\.sonarqube\out\\HealthTracker.DataAccess.DbFirst_7158\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.DbFirst\bin\Debug\HealthTracker.DataAccess.DbFirst.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\.sonarqube\out\\HealthTracker.DataAccess.DbFirst_7158</Property>
+    <Property Name="sonar.stylecop.projectFilePath">C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.DbFirst\HealthTracker.DataAccess.DbFirst.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

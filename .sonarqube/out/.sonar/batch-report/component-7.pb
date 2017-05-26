@@ -1,0 +1,1 @@
+"HealthTracker.WcfService.UnitTests"HealthTracker.WcfService.UnitTests :&'J1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:6F8426B5-8885-4A90-B63F-E4FFE67C41D3

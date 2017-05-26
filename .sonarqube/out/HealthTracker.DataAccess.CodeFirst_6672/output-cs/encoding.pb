@@ -1,0 +1,11 @@
+|
+sC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\Activity.csutf-8€
+wC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\ActivityType.csutf-8|
+sC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\MealType.csutf-8…
+|C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\PersonSummaryView.csutf-8€
+wC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\HealthTrackerContext.csutf-8}
+tC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\Hydration.csutf-8x
+oC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\Meal.csutf-8z
+qC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Classes\Person.csutf-8„
+{C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Migrations\Configuration.csutf-8ƒ
+zC:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\HealthTracker.DataAccess.CodeFirst\Properties\AssemblyInfo.csutf-8

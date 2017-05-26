@@ -1,0 +1,1 @@
+C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\.sonarqube\out\\HealthTracker.ConsoleApp_1985

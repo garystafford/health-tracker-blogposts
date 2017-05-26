@@ -1,0 +1,1 @@
+ HealthTracker.DataAccess.DbFirst HealthTracker.DataAccess.DbFirst :J1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:1C699F6D-0EF2-4E87-841F-F25D551B5D3C
