@@ -1,1 +1,0 @@
-HealthTracker.ConsoleAppHealthTracker.ConsoleApp :J1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:FE879213-0E35-4354-95C7-7F25810F585F

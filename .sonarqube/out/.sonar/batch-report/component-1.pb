@@ -1,1 +1,0 @@
-health-tracker-blogposts :J1.0R'org.sonarqube:sonarqube-scanner-msbuild

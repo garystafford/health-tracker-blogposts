@@ -1,1 +1,0 @@
-HealthTracker.UnitTests.DbFirstHealthTracker.UnitTests.DbFirst :,.J1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:D50EC0B8-E6FF-4F0C-9EA8-4E899D066018

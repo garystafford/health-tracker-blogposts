@@ -1,1 +1,0 @@
-C:\Users\gary.stafford\Source\Repos\health-tracker-blogposts\.sonarqube\out\\HealthTracker.DataAccess.DbFirst_7158

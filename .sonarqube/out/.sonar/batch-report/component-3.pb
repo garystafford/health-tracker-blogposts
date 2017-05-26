@@ -1,1 +1,0 @@
-"HealthTracker.DataAccess.CodeFirst"HealthTracker.DataAccess.CodeFirst :@DHLJ1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:B656FEF5-82CF-483E-95D0-6861AAE4AC22

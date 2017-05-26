@@ -1,1 +1,0 @@
-!HealthTracker.UnitTests.CodeFirst!HealthTracker.UnitTests.CodeFirst :OQJ1.0Rtorg.sonarqube:sonarqube-scanner-msbuild:org.sonarqube:sonarqube-scanner-msbuild:D2E81BDB-2873-41F3-9010-7AF9328CCDB5
