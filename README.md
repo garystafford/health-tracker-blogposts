@@ -1,6 +1,8 @@
 HealthTracker Entity Framework Post Series
 ==========================================
 
+** NOTE: The below posts were written in late 2012. The projects have been updated as of May, 2017 to the latest Microsoft .NET and NuGet package versions, on the release-2.0 branch. **
+
 Repository for a series of EntityFramework blog posts
 
 First Impressions of Code First Development with Entity Framework 5 in Visual Studio 2012: http://wp.me/p1RD28-lU
