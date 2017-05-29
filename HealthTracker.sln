@@ -33,6 +33,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.UnitTests.Cod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTracker.WcfService", "HealthTracker.WcfService\HealthTracker.WcfService.csproj", "{FA94ABC7-3C27-48ED-8CC3-B5F595048A02}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SonarQube", "SonarQube", "{8D796041-4D02-4AA5-B57C-F66D8F4F1140}"
+	ProjectSection(SolutionItems) = preProject
+		SonarQube\org.sonarqube_sonarqube-scanner-msbuildCSharp.ruleset = SonarQube\org.sonarqube_sonarqube-scanner-msbuildCSharp.ruleset
+		SonarQube\SolutionBinding.sqconfig = SonarQube\SolutionBinding.sqconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -2,11 +2,11 @@
 
 namespace HealthTracker.ConsoleApp
 {
-    class Program
+    internal static class Program
     {
-        private static string _newName = String.Empty;
+        private static string _newName = string.Empty;
 
-        static void Main()
+        private static void Main()
         {
             GetNameInput();
             var personId = Examples.FindPerson(_newName);
@@ -27,12 +27,14 @@ namespace HealthTracker.ConsoleApp
 
         private static void GetNameInput()
         {
-            Console.Write("Input Person's Name: ");
-            var readLine = Console.ReadLine();
-            if (readLine != null) _newName = readLine.Trim();
-            if (_newName.Length > 2) return;
-            Console.WriteLine("Name to short. Exiting program.");
-            GetNameInput();
+            while (true)
+            {
+                Console.Write("Input Person's Name: ");
+                var readLine = Console.ReadLine();
+                if (readLine != null) _newName = readLine.Trim();
+                if (_newName.Length > 2) return;
+                Console.WriteLine("Name to short. Exiting program.");
+            }
         }
     }
 }

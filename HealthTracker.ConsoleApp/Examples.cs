@@ -6,7 +6,7 @@ using HealthTracker.DataAccess.Classes;
 
 namespace HealthTracker.ConsoleApp
 {
-    public class Examples
+    public static class Examples
     {
         private static readonly DateTime Today = DateTime.Now.Date;
 

@@ -8,8 +8,8 @@ namespace HealthTracker.DataAccess.Classes
         public int PersonId { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "Name must be less than 100 characters."),
-        MinLength(2, ErrorMessage = "Name must be less than 2 characters.")]
+        [StringLength(100, ErrorMessage = "Name must be less than 100 characters.")]
+        [MinLength(2, ErrorMessage = "Name must be less than 2 characters.")]
         public string Name { get; set; }
 
         public virtual List<Meal> Meals { get; set; }

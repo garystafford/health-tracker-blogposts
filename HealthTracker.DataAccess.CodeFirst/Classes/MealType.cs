@@ -6,11 +6,9 @@ namespace HealthTracker.DataAccess.Classes
     {
         Breakfast,
 
-        [Display(Name = "Mid-Morning")]
-        MidMorning,
+        [Display(Name = "Mid-Morning")] MidMorning,
         Lunch,
-        [Display(Name = "Mid-Afternoon")]
-        MidAfternoon,
+        [Display(Name = "Mid-Afternoon")] MidAfternoon,
         Dinner,
         Snack,
         Brunch,

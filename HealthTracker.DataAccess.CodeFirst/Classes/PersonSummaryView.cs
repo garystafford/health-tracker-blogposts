@@ -6,6 +6,7 @@ namespace HealthTracker.DataAccess.Classes
     {
         [Required]
         public int PersonSummaryViewId { get; set; }
+
         public int PersonId { get; set; }
         public string Name { get; set; }
         public int ActivitiesCount { get; set; }

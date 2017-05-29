@@ -18,8 +18,9 @@ namespace HealthTracker.WcfService
         }
 
         #region Service Operations
+
         /// <summary>
-        /// Example of Adding a new Person.
+        ///     Example of Adding a new Person.
         /// </summary>
         /// <param name="person">New Person Object</param>
         /// <returns>True if successful</returns>
@@ -29,7 +30,7 @@ namespace HealthTracker.WcfService
             {
                 using (var dbContext = GetDbContext())
                 {
-                    dbContext.People.Add(new DataAccess.DbFirst.Person { Name = person.Name });
+                    dbContext.People.Add(new DataAccess.DbFirst.Person {Name = person.Name});
                     dbContext.SaveChanges();
                     return true;
                 }
@@ -42,7 +43,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Example of Updating a Person.
+        ///     Example of Updating a Person.
         /// </summary>
         /// <param name="person">New Person Object</param>
         /// <returns>True if successful</returns>
@@ -67,7 +68,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Example of deleting a Person.
+        ///     Example of deleting a Person.
         /// </summary>
         /// <param name="personId">PersonId</param>
         /// <returns>True if successful</returns>
@@ -92,7 +93,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Example of finding a Person's Id.
+        ///     Example of finding a Person's Id.
         /// </summary>
         /// <param name="personName">Name of the Person to find</param>
         /// <returns>Person's unique Id (PersonId)</returns>
@@ -103,9 +104,9 @@ namespace HealthTracker.WcfService
                 using (var dbContext = GetDbContext())
                 {
                     var personId = dbContext.People
-                                            .Where(person => person.Name == personName)
-                                            .Select(person => person.PersonId)
-                                            .First();
+                        .Where(person => person.Name == personName)
+                        .Select(person => person.PersonId)
+                        .First();
                     return personId;
                 }
             }
@@ -117,7 +118,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Returns a list of all People.
+        ///     Returns a list of all People.
         /// </summary>
         /// <returns>List of People</returns>
         public List<Person> GetPeople()
@@ -126,7 +127,7 @@ namespace HealthTracker.WcfService
             {
                 using (var dbContext = GetDbContext())
                 {
-                    var people = (dbContext.People.Select(p => p));
+                    var people = dbContext.People.Select(p => p);
                     var peopleList = people.Select(p => new Person
                     {
                         PersonId = p.PersonId,
@@ -142,8 +143,9 @@ namespace HealthTracker.WcfService
                 return null;
             }
         }
+
         /// <summary>
-        /// Example of adding a Meal.
+        ///     Example of adding a Meal.
         /// </summary>
         /// <param name="meal">New Meal Object</param>
         /// <returns>True if successful</returns>
@@ -172,7 +174,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Example of deleting a Meal.
+        ///     Example of deleting a Meal.
         /// </summary>
         /// <param name="mealId">MealId</param>
         /// <returns>True if successful</returns>
@@ -197,7 +199,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Return all Meals for a Person.
+        ///     Return all Meals for a Person.
         /// </summary>
         /// <param name="personId">PersonId</param>
         /// <returns></returns>
@@ -208,13 +210,13 @@ namespace HealthTracker.WcfService
                 using (var dbContext = GetDbContext())
                 {
                     var meals = dbContext.Meals.Where(m => m.PersonId == personId)
-                                         .Select(m => new MealDetail
-                                         {
-                                             MealId = m.MealId,
-                                             Date = m.Date,
-                                             Type = m.MealType.Description,
-                                             Description = m.Description
-                                         }).ToList();
+                        .Select(m => new MealDetail
+                        {
+                            MealId = m.MealId,
+                            Date = m.Date,
+                            Type = m.MealType.Description,
+                            Description = m.Description
+                        }).ToList();
                     return meals;
                 }
             }
@@ -226,7 +228,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Example of adding an Activity.
+        ///     Example of adding an Activity.
         /// </summary>
         /// <param name="activity">New Activity Object</param>
         /// <returns>True if successful</returns>
@@ -252,11 +254,10 @@ namespace HealthTracker.WcfService
                 Debug.WriteLine(exception);
                 return false;
             }
-
         }
 
         /// <summary>
-        /// Example of deleting a Activity.
+        ///     Example of deleting a Activity.
         /// </summary>
         /// <param name="activityId">ActivityId</param>
         /// <returns>True if successful</returns>
@@ -281,7 +282,7 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Return all Activities for a Person.
+        ///     Return all Activities for a Person.
         /// </summary>
         /// <param name="personId">PersonId</param>
         /// <returns>List of Activities</returns>
@@ -292,13 +293,13 @@ namespace HealthTracker.WcfService
                 using (var dbContext = GetDbContext())
                 {
                     var activities = dbContext.Activities.Where(a => a.PersonId == personId)
-                                              .Select(a => new ActivityDetail
-                                              {
-                                                  ActivityId = a.ActivityId,
-                                                  Date = a.Date,
-                                                  Type = a.ActivityType.Description,
-                                                  Notes = a.Notes
-                                              }).ToList();
+                        .Select(a => new ActivityDetail
+                        {
+                            ActivityId = a.ActivityId,
+                            Date = a.Date,
+                            Type = a.ActivityType.Description,
+                            Notes = a.Notes
+                        }).ToList();
                     return activities;
                 }
             }
@@ -310,8 +311,8 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Example of updating existing Hydration count.
-        /// Else adding new Hydration if it doesn't exist.
+        ///     Example of updating existing Hydration count.
+        ///     Else adding new Hydration if it doesn't exist.
         /// </summary>
         /// <param name="personId">PersonId</param>
         /// <returns>True if successful</returns>
@@ -350,8 +351,8 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Return a count of all Meals, Hydrations, and Activities for a Person.
-        /// Based on a Database View (virtual table).
+        ///     Return a count of all Meals, Hydrations, and Activities for a Person.
+        ///     Based on a Database View (virtual table).
         /// </summary>
         /// <param name="personId">PersonId</param>
         /// <returns>Summary for a Person</returns>
@@ -361,9 +362,9 @@ namespace HealthTracker.WcfService
             {
                 using (var dbContext = GetDbContext())
                 {
-                    var personView = (dbContext.PersonSummaryViews
-                                               .Where(p => p.PersonId == personId))
-                                               .ToList();
+                    var personView = dbContext.PersonSummaryViews
+                        .Where(p => p.PersonId == personId)
+                        .ToList();
                     return personView;
                 }
             }
@@ -375,8 +376,8 @@ namespace HealthTracker.WcfService
         }
 
         /// <summary>
-        /// Return a count of all Meals, Hydrations, and Activities for a Person.
-        /// Based on a Stored Procedure.
+        ///     Return a count of all Meals, Hydrations, and Activities for a Person.
+        ///     Based on a Stored Procedure.
         /// </summary>
         /// <param name="personId">PersonId</param>
         /// <returns>Summary for a Person</returns>
@@ -386,9 +387,9 @@ namespace HealthTracker.WcfService
             {
                 using (var dbContext = GetDbContext())
                 {
-                    var personView = (dbContext.GetPersonSummary(personId)
-                                               .Where(p => p.PersonId == personId))
-                                               .ToList();
+                    var personView = dbContext.GetPersonSummary(personId)
+                        .Where(p => p.PersonId == personId)
+                        .ToList();
                     return personView;
                 }
             }
