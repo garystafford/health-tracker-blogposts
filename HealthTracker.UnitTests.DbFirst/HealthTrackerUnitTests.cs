@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HealthTracker.DataAccess.DbFirst;
-using CodeFirstPost.UnitTests;
 
 namespace HealthTracker.UnitTests
 {

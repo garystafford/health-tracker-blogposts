@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.IO;
 using HealthTracker.ConsoleApp;
 using HealthTracker.DataAccess;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CodeFirstPost.UnitTests
+namespace HealthTracker.UnitTests.CodeFirst
 {
     [TestClass]
     public class HealthTrackerUnitTests
