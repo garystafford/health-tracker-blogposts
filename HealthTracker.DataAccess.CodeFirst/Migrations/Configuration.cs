@@ -1,31 +1,27 @@
+using System.Data.Entity.Migrations;
+using HealthTracker.DataAccess.Classes;
+
 namespace HealthTracker.DataAccess.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<HealthTracker.DataAccess.HealthTrackerContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<HealthTrackerContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(HealthTracker.DataAccess.HealthTrackerContext context)
+        protected override void Seed(HealthTrackerContext context)
         {
             //  This method will be called after migrating to the latest version.
-
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            //  to avoid creating duplicate seed data.
+
+            context.Persons.AddOrUpdate(
+                p => p.Name,
+                new Person { Name = "Andrew Peters" },
+                new Person { Name = "Brice Lambson" },
+                new Person { Name = "Rowan Miller" }
+            );
         }
     }
 }
