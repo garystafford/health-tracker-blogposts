@@ -1,5 +1,6 @@
 {
-  "ServerUri": "http://localhost:9000",
+  "ServerUri": "http://localhost:9000/",
+  "Organization": null,
   "ProjectKey": "org.sonarqube:sonarqube-scanner-msbuild",
   "Profiles": {
     "CSharp": {
